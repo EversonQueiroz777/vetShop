@@ -1,0 +1,18 @@
+.container{
+	width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.titulo{
+    font-size: 2rem;
+    font-family: Pacifico, cursive;
+    background-color:orange;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-align: center;
+}
+
+.pesoInválido{
+    background-color: lightcoral;
+}
