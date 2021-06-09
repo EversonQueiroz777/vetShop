@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/tabela/tabela.css">
     <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/form/form-titulo.css">
+    <link rel="stylesheet" href="./css/form/form-adicionarGrupo.css">
+    <link rel="stylesheet" href="./css/form/form-adcionarLabel.css">
+    <link rel="stylesheet" href="./css/form/form-adicionarCampo.css">
+    <link rel="stylesheet" href="./css/form/form-adicionarBotao.css">
 </head>
 <body>
     <header>
@@ -31,7 +36,6 @@
                     </tr>
                 </thead>
                 <tbody class="tabela__clientes">
-                    <span id="mensagemErro"></span>
                     <tr class="tabela__cliente">
                         <td class="tabela__cliente___nome">Adevaldo</td>
                         <td class="tabela__cliente___pet">Cachorro</td>
@@ -53,7 +57,7 @@
                     <tr class="tabela__cliente">
                         <td class="tabela__cliente___nome">Beatriz</td>
                         <td class="tabela__cliente___pet">Cachorro</td>
-                        <td class="tabela__cliente___petNome">Kush</td>
+                        <td class="tabela__cliente___petNome">Whisky</td>
                         <td class="tabela__cliente___petRaca">Boxer</td>
                         <td class="tabela__cliente___petPeso">25</td>
                         <td class="tabela__cliente___petPorte"></td>
@@ -74,8 +78,38 @@
         </section>
     </main>
 
+    <section class="container">
+        <h2 class="form__titulo">Adicionar novo cliente</h2>
+        <form id="form__adicionar">
+            <div class="form__adicionar___grupo">
+                <label for="nome" class="form__adicionar___label">Nome cliente:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome do Cliente" class="form__adicionar___campo">
+            </div>
+            <div class="form__adicionar___grupo">
+                <label for="pet" class="form__adicionar___label">Pet:</label>
+                <input type="text" id="pet" name="pet" placeholder="Qual o pet do cliente ?" class="form__adicionar___campo">
+            </div>
+            <div class="form__adicionar___grupo">
+                <label for="nomePet" class="form__adicionar___label">Nome do Pet:</label>
+                <input type="text" id="nomePet" name="nomePet" placeholder="Digite o nome do pet" class="form__adicionar___campo">
+            </div>
+            <div class="form__adicionar___grupo">
+                <label for="racaPet" class="form__adicionar___label">Raça do pet:</label>
+                <input type="text" id="racaPet" name="racaPet" placeholder="Digite a raça do pet" class="form__adicionar___campo">
+            </div>
+            <div class="form__adicionar___grupo">
+                <label for="pesoPet" class="form__adicionar___label">Peso do pet:</label>
+                <input type="text" id="pesoPet" name="pesoPet" placeholder="Digite o peso do pet" class="form__adicionar___campo">
+            </div>
+
+            <button id="adicionar-paciente" class="form__adicionar___botao">Adicionar</button>
+        </form>
+    </section>
+
     <script src="./js/define-porte.js"></script>
+    <script src="./js/adicionar-cliente.js"></script>
     <script src="./js/remover-cliente.js"></script>
     <script src="./js/filtra.js"></script>
+    
 </body>
 </html>

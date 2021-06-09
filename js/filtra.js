@@ -14,11 +14,11 @@ campoFiltro.addEventListener("input", function(){
             }else{
                 cliente.classList.remove("invisivel");
             }
-        }
+        };
     }else{
         for(let i = 0; i < clientes.length; i++){
             cliente = clientes[i];
             cliente.classList.remove("invisivel");
-        }
+        };
     }
 });
