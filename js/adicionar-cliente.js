@@ -4,29 +4,23 @@ botaoAdicionar.addEventListener("click", function(event){
 
     let form = document.getElementById("form__adicionar")
     
-    let nome = form.nome.value;
-    let pet = form.pet.value;
-    let nomePet = form.nomePet.value;
-    let racaPet = form.racaPet.value;
-    let pesoPet = form.pesoPet.value;
+    cliente = obtemClienteDoFormulario(form);
 
-    console.log(nome);
-    console.log(pet);
-    console.log(nomePet);
-    console.log(racaPet);
-    console.log(pesoPet);
-
+    console.log(cliente);
+    
     let nomeTd = document.createElement("td");
     let petTd = document.createElement("td");
     let nomePetTd = document.createElement("td");
     let racaPetTd = document.createElement("td");
     let pesoPetTd = document.createElement("td");
+    let portePetTd = document.createElement("td");
 
-    nomeTd.textContent = nome;
-    petTd.textContent = pet;
-    nomePetTd.textContent = nomePet;
-    racaPetTd.textContent = racaPet;
-    pesoPetTd.textContent = pesoPet;
+    nomeTd.textContent = cliente.nome;
+    petTd.textContent = cliente.pet;
+    nomePetTd.textContent = cliente.nomePet;
+    racaPetTd.textContent = cliente.racaPet;
+    pesoPetTd.textContent = cliente.pesoPet;
+    portePetTd.textContent = cliente.petPorte;
 
     let clienteTr = document.createElement("tr");
 
@@ -35,6 +29,7 @@ botaoAdicionar.addEventListener("click", function(event){
     clienteTr.appendChild(nomePetTd);
     clienteTr.appendChild(racaPetTd);
     clienteTr.appendChild(pesoPetTd);
+    clienteTr.appendChild(portePetTd);
 
     let clientes = document.querySelector(".tabela__clientes");
 
@@ -42,3 +37,15 @@ botaoAdicionar.addEventListener("click", function(event){
 
 
 });
+
+function obtemClienteDoFormulario(form){
+    cliente = {
+    nome: form.nome.value,
+    pet: form.pet.value,
+    nomePet: form.nomePet.value,
+    racaPet: form.racaPet.value,
+    pesoPet: form.pesoPet.value,
+    petPorte: calculaPorte(form.pesoPet.value)
+    }
+    return cliente;
+}
