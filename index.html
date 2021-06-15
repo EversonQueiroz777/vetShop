@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="./css/form/form-adicionarCampo.css">
     <link rel="stylesheet" href="./css/form/form-adicionarBotao.css">
 </head>
+
 <body>
     <header>
         <h1 class="titulo">Queiroz VetShop</h1>
@@ -75,41 +77,55 @@
 
                 </tbody>
             </table>
+            <span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+            <button class="adicionar-cliente botao">Buscar clientes</button>
         </section>
     </main>
 
     <section class="container">
         <h2 class="form__titulo">Adicionar novo cliente</h2>
+
+        <ul class="mensagensErro">
+
+        </ul>
+
         <form id="form__adicionar">
             <div class="form__adicionar___grupo">
                 <label for="nome" class="form__adicionar___label">Nome cliente:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite o nome do Cliente" class="form__adicionar___campo">
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome do Cliente"
+                    class="form__adicionar___campo">
             </div>
             <div class="form__adicionar___grupo">
                 <label for="pet" class="form__adicionar___label">Pet:</label>
-                <input type="text" id="pet" name="pet" placeholder="Qual o pet do cliente ?" class="form__adicionar___campo">
+                <input type="text" id="pet" name="pet" placeholder="Qual o pet do cliente ?"
+                    class="form__adicionar___campo">
             </div>
             <div class="form__adicionar___grupo">
                 <label for="nomePet" class="form__adicionar___label">Nome do Pet:</label>
-                <input type="text" id="nomePet" name="nomePet" placeholder="Digite o nome do pet" class="form__adicionar___campo">
+                <input type="text" id="nomePet" name="nomePet" placeholder="Digite o nome do pet"
+                    class="form__adicionar___campo">
             </div>
             <div class="form__adicionar___grupo">
                 <label for="racaPet" class="form__adicionar___label">Raça do pet:</label>
-                <input type="text" id="racaPet" name="racaPet" placeholder="Digite a raça do pet" class="form__adicionar___campo">
+                <input type="text" id="racaPet" name="racaPet" placeholder="Digite a raça do pet"
+                    class="form__adicionar___campo">
             </div>
             <div class="form__adicionar___grupo">
                 <label for="pesoPet" class="form__adicionar___label">Peso do pet:</label>
-                <input type="text" id="pesoPet" name="pesoPet" placeholder="Digite o peso do pet" class="form__adicionar___campo">
+                <input type="text" id="pesoPet" name="pesoPet" placeholder="Digite o peso do pet"
+                    class="form__adicionar___campo">
             </div>
 
             <button id="adicionar-paciente" class="form__adicionar___botao">Adicionar</button>
         </form>
     </section>
 
-    <script src="./js/define-porte.js"></script>  
+    <script src="./js/define-porte.js"></script>
     <script src="./js/adicionar-cliente.js"></script>
     <script src="./js/remover-cliente.js"></script>
     <script src="./js/filtra.js"></script>
-    
+    <script src="./js/buscar-cliente.js"></script>
+
 </body>
+
 </html>

@@ -6,13 +6,24 @@ botaoAdicionar.addEventListener("click", function(event){
     
     cliente = obtemClienteDoFormulario(form);
 
+    let erros = validaCliente(cliente);
+    console.log(erros);
+
+    if(erros.length > 0){
+        exibeErro(erros);
+        return;
+    }
+
     adicionaClienteNaTabela(cliente);
 
     let clientes = document.querySelector(".tabela__clientes");
 
     clientes.appendChild(clienteTr);
 
+    form.reset();
 
+    const tabelaErros = document.querySelector(".mensagensErro");
+    tabelaErros.innerHTML = "";
 });
 
 function obtemClienteDoFormulario(form){
@@ -31,6 +42,17 @@ function adicionaClienteNaTabela(cliente){
     let clienteTr = montaTr(cliente);
     const tabelaClientes = document.querySelector(".tabela__clientes");
     tabelaClientes.appendChild(clienteTr);
+}
+
+function exibeErro(erros){
+    let ul = document.querySelector(".mensagensErro");
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro){
+        let li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    })
 }
 
 function montaTr(cliente){
@@ -52,4 +74,17 @@ function montaTd(dado, classe){
     td.textContent = dado;
     td.classList.add(classe);
     return td;
+}
+
+function validaCliente(cliente){
+    erros = [];
+
+    if(!validaPeso(cliente.pesoPet)){ erros.push("Peso do Pet é inválido!")};
+    if(cliente.nome.length == 0){ erros.push("Insira o nome do cliente!")};
+    if(cliente.pet.length == 0){ erros.push("Insira qual o pet do cliente!")};
+    if(cliente.nomePet.length == 0){ erros.push("Insira o nome do Pet!")};
+    if(cliente.racaPet.length == 0){ erros.push("Insira a raça do pet!")};
+    if(cliente.pesoPet.length == 0){ erros.push("Insira o peso do pet!")};
+
+    return erros;
 }
