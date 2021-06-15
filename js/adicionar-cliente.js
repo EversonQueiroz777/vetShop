@@ -6,30 +6,7 @@ botaoAdicionar.addEventListener("click", function(event){
     
     cliente = obtemClienteDoFormulario(form);
 
-    console.log(cliente);
-    
-    let nomeTd = document.createElement("td");
-    let petTd = document.createElement("td");
-    let nomePetTd = document.createElement("td");
-    let racaPetTd = document.createElement("td");
-    let pesoPetTd = document.createElement("td");
-    let portePetTd = document.createElement("td");
-
-    nomeTd.textContent = cliente.nome;
-    petTd.textContent = cliente.pet;
-    nomePetTd.textContent = cliente.nomePet;
-    racaPetTd.textContent = cliente.racaPet;
-    pesoPetTd.textContent = cliente.pesoPet;
-    portePetTd.textContent = cliente.petPorte;
-
-    let clienteTr = document.createElement("tr");
-
-    clienteTr.appendChild(nomeTd);
-    clienteTr.appendChild(petTd);
-    clienteTr.appendChild(nomePetTd);
-    clienteTr.appendChild(racaPetTd);
-    clienteTr.appendChild(pesoPetTd);
-    clienteTr.appendChild(portePetTd);
+    adicionaClienteNaTabela(cliente);
 
     let clientes = document.querySelector(".tabela__clientes");
 
@@ -48,4 +25,31 @@ function obtemClienteDoFormulario(form){
     petPorte: calculaPorte(form.pesoPet.value)
     }
     return cliente;
+}
+
+function adicionaClienteNaTabela(cliente){
+    let clienteTr = montaTr(cliente);
+    const tabelaClientes = document.querySelector(".tabela__clientes");
+    tabelaClientes.appendChild(clienteTr);
+}
+
+function montaTr(cliente){
+    clienteTr = document.createElement("tr");
+    clienteTr.classList.add("tabela__cliente");
+
+    clienteTr.appendChild(montaTd(cliente.nome, "tabela__cliente___nome"));
+    clienteTr.appendChild(montaTd(cliente.pet, "tabela__cliente___pet"))
+    clienteTr.appendChild(montaTd(cliente.nomePet, "tabela__cliente___petNome"));
+    clienteTr.appendChild(montaTd(cliente.racaPet, "tabela__cliente___petRaca"));
+    clienteTr.appendChild(montaTd(cliente.pesoPet, "tabela__cliente___petPeso"));
+    clienteTr.appendChild(montaTd(cliente.petPorte, "tabela__cliente___petPorte"));
+
+    return clienteTr;
+}
+
+function montaTd(dado, classe){
+    let td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
 }

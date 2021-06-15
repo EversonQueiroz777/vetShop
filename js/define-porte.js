@@ -8,17 +8,16 @@ for (let i = 0; i < clientes.length; i++) {
 
   let peso = tdPeso.textContent;
 
-  console.log(peso);
-  pesoEhValido = validaPeso(peso);
+  pesoValido = validaPeso(peso);
 
-  if (!pesoEhValido) {
+  if (!pesoValido) {
     console.log("Peso Inválido");
-    pesoEhValido = false;
-    cliente.classList.add("pesoInválido");
+    pesoValido = false;
+    cliente.classList.add("pesoInvalido");
     tdPorte.textContent = "Peso Inválido";
-  }else{
-      porte = calculaPorte(peso);
-      tdPorte.textContent = porte;
+  } else {
+    porte = calculaPorte(pesoValido);
+    tdPorte.textContent = porte;
   }
 }
 
