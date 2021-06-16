@@ -10,6 +10,7 @@
     border: 0;
     border-bottom: 4px solid #FF8C00;
     cursor: pointer;
+    border-radius: 5px;
 }
 .form__adicionar___botao:hover{
     border:0;

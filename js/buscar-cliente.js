@@ -4,7 +4,7 @@ botaoBuscar.addEventListener("click", function () {
   console.log("Buscando Pacientes");
 
   let xhr = new XMLHttpRequest();
-
+  
   xhr.open(
     "GET",
     "C:/Users/Eve/Documents/myprojects/tabela_vetShop/vetShop/clientes.json"
